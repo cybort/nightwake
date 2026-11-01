@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "NIGHTWAKE — free browser shmup roguelike",
+      "hasCanvas": true,
+      "bodyTextLen": 6125,
+      "bodyTextHash": "3004ebc2d15c172b65cfdd94fd878f2ef7a7e8ba8ba64294e54c68a95b6d2506",
+      "bodyTextPrefix": "Skip to content NIGHTWAKE Features How to play Ships Weapons FAQ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "NIGHTWAKE — free browser shmup roguelike",
+      "hasCanvas": true,
+      "bodyTextLen": 6060,
+      "bodyTextHash": "f34779a8590c8515a4e6ae4266aa371bbdf02689119b04e01cf66e1266968c9a",
+      "bodyTextPrefix": "Skip to content NIGHTWAKE 中文 FREE BROWSER SHMUP A shoot 'em up t",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

@@ -1,0 +1,1491 @@
+//#region node_modules/.nitro/vite/services/ssr/assets/dossier-BV9Zi6qy.js
+var GUNS = {
+	spread: {
+		name: {
+			en: "Ember Spread",
+			zh: "余烬散射"
+		},
+		blurb: {
+			en: "A wide fan of tracer rounds.",
+			zh: "宽幅曳光弹扇面。"
+		},
+		color: "#ff4b3a"
+	},
+	lance: {
+		name: {
+			en: "Azure Lance",
+			zh: "青蓝长枪"
+		},
+		blurb: {
+			en: "A piercing beam that cuts a line.",
+			zh: "贯穿一线的光束。"
+		},
+		color: "#5fd3ff"
+	},
+	arc: {
+		name: {
+			en: "Violet Arc",
+			zh: "紫电锁链"
+		},
+		blurb: {
+			en: "Lightning that locks the nearest foe.",
+			zh: "锁定最近目标的闪电。"
+		},
+		color: "#c45bff"
+	}
+};
+var SHIPS = [
+	{
+		id: "lantern",
+		name: "LANTERN",
+		role: {
+			en: "Veteran fighter",
+			zh: "老练战机"
+		},
+		blurb: {
+			en: "+5 hull, +5% speed, +8 harvesting. No penalties. Best first sortie.",
+			zh: "船体 +5、速度 +5%、回收 +8，没有惩罚。第一趟最稳。"
+		},
+		gun: "spread",
+		hpFlat: 5,
+		hpMul: 1,
+		armor: 0,
+		speed: .05,
+		damage: 0,
+		crit: 0,
+		dodge: 0,
+		harvesting: 8,
+		luck: 0,
+		scrapBonus: 0,
+		engineering: 0,
+		atkSpeed: 0,
+		armorGain: 1,
+		engGain: 1
+	},
+	{
+		id: "kestrel",
+		name: "KESTREL",
+		role: {
+			en: "Glass interceptor",
+			zh: "玻璃拦截机"
+		},
+		blurb: {
+			en: "+40% damage and +15% speed, but half hull and −1 armor.",
+			zh: "伤害 +40%、速度 +15%，船体减半、护甲 −1。"
+		},
+		gun: "lance",
+		hpFlat: 0,
+		hpMul: .5,
+		armor: -1,
+		speed: .15,
+		damage: .4,
+		crit: 0,
+		dodge: 0,
+		harvesting: 0,
+		luck: 0,
+		scrapBonus: 0,
+		engineering: 0,
+		atkSpeed: 0,
+		armorGain: 1,
+		engGain: 1
+	},
+	{
+		id: "redoubt",
+		name: "REDOUBT",
+		role: {
+			en: "Flying fortress",
+			zh: "飞行堡垒"
+		},
+		blurb: {
+			en: "+15 hull and +6 armor. Armor gains are 50% stronger. −15% speed, −10% fire rate.",
+			zh: "船体 +15、护甲 +6，护甲收益额外 +50%。速度 −15%，射速 −10%。"
+		},
+		gun: "spread",
+		hpFlat: 15,
+		hpMul: 1,
+		armor: 6,
+		speed: -.15,
+		damage: 0,
+		crit: 0,
+		dodge: 0,
+		harvesting: 0,
+		luck: 0,
+		scrapBonus: 0,
+		engineering: 0,
+		atkSpeed: -.1,
+		armorGain: 1.5,
+		engGain: 1
+	},
+	{
+		id: "swarm",
+		name: "SWARM",
+		role: {
+			en: "Drone carrier",
+			zh: "无人机母舰"
+		},
+		blurb: {
+			en: "+5 engineering, and engineering upgrades are 50% stronger. −10% damage.",
+			zh: "工程 +5，工程升级效果 +50%。伤害 −10%。"
+		},
+		gun: "spread",
+		hpFlat: 0,
+		hpMul: 1,
+		armor: 0,
+		speed: 0,
+		damage: -.1,
+		crit: 0,
+		dodge: 0,
+		harvesting: 0,
+		luck: 0,
+		scrapBonus: 0,
+		engineering: 5,
+		atkSpeed: 0,
+		armorGain: 1,
+		engGain: 1.5
+	},
+	{
+		id: "wraith",
+		name: "WRAITH",
+		role: {
+			en: "Arc assassin",
+			zh: "电弧刺客"
+		},
+		blurb: {
+			en: "Starts on Violet Arc. +15% crit, +10% dodge, −3 armor, −2 hull.",
+			zh: "开局就是紫电。暴击 +15%、闪避 +10%，护甲 −3、船体 −2。"
+		},
+		gun: "arc",
+		hpFlat: -2,
+		hpMul: 1,
+		armor: -3,
+		speed: .04,
+		damage: 0,
+		crit: .15,
+		dodge: .1,
+		harvesting: 0,
+		luck: 0,
+		scrapBonus: 0,
+		engineering: 0,
+		atkSpeed: 0,
+		armorGain: 1,
+		engGain: 1
+	},
+	{
+		id: "coffer",
+		name: "COFFER",
+		role: {
+			en: "Scrap hunter",
+			zh: "残片猎手"
+		},
+		blurb: {
+			en: "+40 luck, +15 harvesting, +10% scrap. −10% damage. Luck multiplies drop rates from wave 1, and shop tier weights once the wave has grown them.",
+			zh: "幸运 +40、回收 +15、残片 +10%，伤害 −10%。幸运从第 1 波就放大掉落；货架高阶要等波次先长出权重，再被幸运放大。"
+		},
+		gun: "spread",
+		hpFlat: 0,
+		hpMul: 1,
+		armor: 0,
+		speed: 0,
+		damage: -.1,
+		crit: 0,
+		dodge: 0,
+		harvesting: 15,
+		luck: 40,
+		scrapBonus: .1,
+		engineering: 0,
+		atkSpeed: 0,
+		armorGain: 1,
+		engGain: 1
+	}
+];
+var WEAPONS = [
+	{
+		id: "tracer",
+		name: {
+			en: "Tracer Pod",
+			zh: "曳光荚舱"
+		},
+		classes: ["ballistic"],
+		blurb: {
+			en: "A tight spread of tracer rounds.",
+			zh: "一小簇曳光弹。"
+		}
+	},
+	{
+		id: "rotary",
+		name: {
+			en: "Rotary",
+			zh: "转管炮"
+		},
+		classes: ["ballistic"],
+		blurb: {
+			en: "Very high fire rate, light rounds.",
+			zh: "射速极高的轻弹。"
+		}
+	},
+	{
+		id: "scatter",
+		name: {
+			en: "Scatter",
+			zh: "散弹"
+		},
+		classes: ["ballistic"],
+		blurb: {
+			en: "Short-range burst that shreds anything close.",
+			zh: "近距爆发，撕碎贴脸目标。"
+		}
+	},
+	{
+		id: "bore",
+		name: {
+			en: "Slug Bore",
+			zh: "穿甲钉"
+		},
+		classes: ["ballistic", "precision"],
+		blurb: {
+			en: "A hypersonic slug that pierces a line.",
+			zh: "超高速弹钉，直线穿透。"
+		}
+	},
+	{
+		id: "lance",
+		name: {
+			en: "Lance Bolt",
+			zh: "枪矛弹"
+		},
+		classes: ["energy"],
+		blurb: {
+			en: "Piercing bolts. Pierce grows with tier.",
+			zh: "穿透光弹，阶级越高穿透越多。"
+		}
+	},
+	{
+		id: "arc",
+		name: {
+			en: "Arc Chain",
+			zh: "连锁电弧"
+		},
+		classes: ["energy", "precision"],
+		blurb: {
+			en: "Locks the nearest foe and chains.",
+			zh: "锁定最近敌人并连锁。"
+		}
+	},
+	{
+		id: "ring",
+		name: {
+			en: "Pulse Ring",
+			zh: "脉冲环"
+		},
+		classes: ["energy"],
+		blurb: {
+			en: "An expanding ring that erases bullets.",
+			zh: "扩散的环，擦掉敌弹。"
+		}
+	},
+	{
+		id: "seeker",
+		name: {
+			en: "Seeker",
+			zh: "追踪弹"
+		},
+		classes: ["explosive"],
+		blurb: {
+			en: "Homing missiles with a small blast.",
+			zh: "小范围爆炸的追踪导弹。"
+		}
+	},
+	{
+		id: "warhead",
+		name: {
+			en: "Warhead",
+			zh: "重弹头"
+		},
+		classes: ["explosive"],
+		blurb: {
+			en: "Slow missile, huge blast.",
+			zh: "慢速导弹，爆炸范围很大。"
+		}
+	},
+	{
+		id: "canister",
+		name: {
+			en: "Canister",
+			zh: "子母弹"
+		},
+		classes: ["explosive"],
+		blurb: {
+			en: "Bursts into a ring of bomblets.",
+			zh: "炸开成一圈子弹。"
+		}
+	},
+	{
+		id: "wing",
+		name: {
+			en: "Wing Drone",
+			zh: "僚机"
+		},
+		classes: ["drone"],
+		blurb: {
+			en: "Orbits you and shoots what it sees.",
+			zh: "环绕机体，自动射击。"
+		}
+	},
+	{
+		id: "aegis",
+		name: {
+			en: "Aegis Orb",
+			zh: "护盾球"
+		},
+		classes: ["drone", "energy"],
+		blurb: {
+			en: "Orbits, blocks shots, burns on contact.",
+			zh: "环绕、挡弹、接触灼烧。"
+		}
+	}
+];
+var ITEMS = [
+	{
+		id: "coin",
+		name: {
+			en: "Lucky Slug",
+			zh: "幸运弹壳"
+		},
+		blurb: {
+			en: "+10 luck, −2% damage. Hangar prints the four tier odds.",
+			zh: "幸运 +10，伤害 −2%。机库会印出四档货架几率。"
+		},
+		cost: 28,
+		tier: 0
+	},
+	{
+		id: "magnet",
+		name: {
+			en: "Magnet Rig",
+			zh: "磁吸架"
+		},
+		blurb: {
+			en: "Pickups pull from much farther away.",
+			zh: "拾取范围大幅增加。"
+		},
+		cost: 25,
+		tier: 0
+	},
+	{
+		id: "plate",
+		name: {
+			en: "Keel Plate",
+			zh: "龙骨装甲"
+		},
+		blurb: {
+			en: "+3 armor.",
+			zh: "护甲 +3。"
+		},
+		cost: 32,
+		tier: 0
+	},
+	{
+		id: "harvest",
+		name: {
+			en: "Harvest Rig",
+			zh: "回收架"
+		},
+		blurb: {
+			en: "+20 harvesting. This is scrap, not luck.",
+			zh: "回收 +20。这是残片，不是幸运。"
+		},
+		cost: 36,
+		tier: 0
+	},
+	{
+		id: "field",
+		name: {
+			en: "Field Kit",
+			zh: "战地组件"
+		},
+		blurb: {
+			en: "+18 hull.",
+			zh: "船体 +18。"
+		},
+		cost: 30,
+		tier: 0
+	},
+	{
+		id: "graze",
+		name: {
+			en: "Graze Coil",
+			zh: "擦弹线圈"
+		},
+		blurb: {
+			en: "Near misses drip scrap.",
+			zh: "擦弹会掉一点残片。"
+		},
+		cost: 34,
+		tier: 0
+	},
+	{
+		id: "medal",
+		name: {
+			en: "Ash Medal",
+			zh: "灰勋章"
+		},
+		blurb: {
+			en: "+6 luck, +5% scrap, −5% damage.",
+			zh: "幸运 +6，残片 +5%，伤害 −5%。"
+		},
+		cost: 40,
+		tier: 1
+	},
+	{
+		id: "overclock",
+		name: {
+			en: "Overclock",
+			zh: "超频"
+		},
+		blurb: {
+			en: "+20% fire rate, −10 hull.",
+			zh: "射速 +20%，船体 −10。"
+		},
+		cost: 40,
+		tier: 1
+	},
+	{
+		id: "bay",
+		name: {
+			en: "Bomb Rack",
+			zh: "炸弹挂架"
+		},
+		blurb: {
+			en: "Carry one more bomb, and gain one now.",
+			zh: "炸弹上限 +1，并立刻获得一枚。"
+		},
+		cost: 38,
+		tier: 1
+	},
+	{
+		id: "lens",
+		name: {
+			en: "Crit Lens",
+			zh: "暴击透镜"
+		},
+		blurb: {
+			en: "+12% crit.",
+			zh: "暴击 +12%。"
+		},
+		cost: 40,
+		tier: 1
+	},
+	{
+		id: "dronebay",
+		name: {
+			en: "Drone Bay",
+			zh: "无人机舱"
+		},
+		blurb: {
+			en: "+4 engineering.",
+			zh: "工程 +4。"
+		},
+		cost: 36,
+		tier: 1
+	},
+	{
+		id: "canopy",
+		name: {
+			en: "Glass Canopy",
+			zh: "玻璃座舱"
+		},
+		blurb: {
+			en: "+25% damage, −5 hull.",
+			zh: "伤害 +25%，船体 −5。"
+		},
+		cost: 75,
+		tier: 2
+	},
+	{
+		id: "piggy",
+		name: {
+			en: "Ash Bank",
+			zh: "灰烬银行"
+		},
+		blurb: {
+			en: "Each hangar pays 8% interest on scrap.",
+			zh: "每次进库，残片结息 8%。"
+		},
+		cost: 42,
+		tier: 2
+	},
+	{
+		id: "phoenix",
+		name: {
+			en: "Cinder Plume",
+			zh: "余烬羽"
+		},
+		blurb: {
+			en: "Once per run, revive at 40% hull.",
+			zh: "每局一次，以 40% 船体复活。"
+		},
+		cost: 110,
+		tier: 3
+	}
+];
+var UPGRADES = [
+	{
+		id: "dmg",
+		name: {
+			en: "War Load",
+			zh: "战装填"
+		},
+		blurb: {
+			en: "+8% damage",
+			zh: "伤害 +8%"
+		}
+	},
+	{
+		id: "rof",
+		name: {
+			en: "Feed Belt",
+			zh: "供弹带"
+		},
+		blurb: {
+			en: "+10% fire rate",
+			zh: "射速 +10%"
+		}
+	},
+	{
+		id: "hp",
+		name: {
+			en: "Spare Plates",
+			zh: "备用装甲"
+		},
+		blurb: {
+			en: "+12 hull",
+			zh: "船体 +12"
+		}
+	},
+	{
+		id: "armor",
+		name: {
+			en: "Layered Hull",
+			zh: "层叠船体"
+		},
+		blurb: {
+			en: "+1 armor",
+			zh: "护甲 +1"
+		}
+	},
+	{
+		id: "dodge",
+		name: {
+			en: "Slip Stream",
+			zh: "滑流"
+		},
+		blurb: {
+			en: "+4% dodge",
+			zh: "闪避 +4%"
+		}
+	},
+	{
+		id: "crit",
+		name: {
+			en: "Needle Sight",
+			zh: "针式瞄具"
+		},
+		blurb: {
+			en: "+5% crit",
+			zh: "暴击 +5%"
+		}
+	},
+	{
+		id: "speed",
+		name: {
+			en: "Afterburn",
+			zh: "加力"
+		},
+		blurb: {
+			en: "+6% speed",
+			zh: "速度 +6%"
+		}
+	},
+	{
+		id: "harvest",
+		name: {
+			en: "Salvage Crew",
+			zh: "打捞组"
+		},
+		blurb: {
+			en: "+8 harvesting",
+			zh: "回收 +8"
+		}
+	},
+	{
+		id: "luck",
+		name: {
+			en: "Hot Dice",
+			zh: "热骰"
+		},
+		blurb: {
+			en: "+8 luck. Multiplies drops now, and shop tier weights once the wave has any.",
+			zh: "幸运 +8。立刻放大掉落；有高阶权重之后，也放大货架几率。"
+		}
+	},
+	{
+		id: "area",
+		name: {
+			en: "Wide Bore",
+			zh: "宽口径"
+		},
+		blurb: {
+			en: "+8% area",
+			zh: "范围 +8%"
+		}
+	},
+	{
+		id: "eng",
+		name: {
+			en: "Workshop",
+			zh: "工坊"
+		},
+		blurb: {
+			en: "+1 engineering",
+			zh: "工程 +1"
+		}
+	},
+	{
+		id: "scrap",
+		name: {
+			en: "Greedy Hold",
+			zh: "贪舱"
+		},
+		blurb: {
+			en: "+5% scrap",
+			zh: "残片 +5%"
+		}
+	},
+	{
+		id: "regen",
+		name: {
+			en: "Patch Nanites",
+			zh: "修补纳米"
+		},
+		blurb: {
+			en: "+0.35 regen",
+			zh: "再生 +0.35"
+		}
+	},
+	{
+		id: "leech",
+		name: {
+			en: "Leech Coil",
+			zh: "吸血线圈"
+		},
+		blurb: {
+			en: "+3% life steal",
+			zh: "生命偷取 +3%"
+		}
+	}
+];
+var CLASS_NOTES = [
+	{
+		id: "ballistic",
+		name: {
+			en: "Ballistic",
+			zh: "实弹"
+		},
+		bonus: {
+			en: "2: +12% fire rate. 4: +20% damage.",
+			zh: "2 件：射速 +12%。4 件：伤害 +20%。"
+		}
+	},
+	{
+		id: "energy",
+		name: {
+			en: "Energy",
+			zh: "能量"
+		},
+		bonus: {
+			en: "2: +1 pierce. 4: +18% damage.",
+			zh: "2 件：穿透 +1。4 件：伤害 +18%。"
+		}
+	},
+	{
+		id: "explosive",
+		name: {
+			en: "Explosive",
+			zh: "爆炸"
+		},
+		bonus: {
+			en: "2: +25% blast. 4: kills drop extra scrap.",
+			zh: "2 件：爆炸 +25%。4 件：击杀额外掉残片。"
+		}
+	},
+	{
+		id: "drone",
+		name: {
+			en: "Drone",
+			zh: "无人机"
+		},
+		bonus: {
+			en: "2: +30% drone damage. 4: an extra orbiting shot.",
+			zh: "2 件：无人机伤害 +30%。4 件：额外一发环绕射击。"
+		}
+	},
+	{
+		id: "precision",
+		name: {
+			en: "Precision",
+			zh: "精准"
+		},
+		bonus: {
+			en: "2: +8% crit. 4: crits hit harder.",
+			zh: "2 件：暴击 +8%。4 件：暴击更痛。"
+		}
+	}
+];
+var BOSSES = [
+	{
+		wave: 5,
+		name: "CINDER WALKER",
+		blurb: {
+			en: "A ground walker that opens the bullet curtain.",
+			zh: "地面步行机，第一次拉开弹幕。"
+		}
+	},
+	{
+		wave: 10,
+		name: "AEGIS KEEP",
+		blurb: {
+			en: "An airborne fort with layered guns.",
+			zh: "空中要塞，火力分层。"
+		}
+	},
+	{
+		wave: 15,
+		name: "IRON KEEL",
+		blurb: {
+			en: "A dreadnought that asks if your build can burst.",
+			zh: "无畏舰，考验你的爆发。"
+		}
+	},
+	{
+		wave: 20,
+		name: "PRISM NEXUS",
+		blurb: {
+			en: "The last mothership of the run.",
+			zh: "这一局的最后母舰。"
+		}
+	}
+];
+var STARTER_WEAPONS = [
+	"tracer",
+	"lance",
+	"seeker",
+	"wing"
+];
+function shipById(id) {
+	return SHIPS.find((s) => s.id === id) ?? SHIPS[0];
+}
+function weaponById(id) {
+	return WEAPONS.find((w) => w.id === id) ?? WEAPONS[0];
+}
+function itemById(id) {
+	return ITEMS.find((i) => i.id === id);
+}
+/** Base numbers measured from the public client. Names here are ours. */
+var FOES = {
+	fighter: {
+		hp: 6,
+		r: 16,
+		scrap: 1,
+		score: 100,
+		bullet: 1,
+		contact: 2,
+		boss: false,
+		name: {
+			en: "Fighter",
+			zh: "战斗机"
+		},
+		path: {
+			en: "Vee, column, side arc, or swoop.",
+			zh: "人字、纵队、侧弧或俯冲拉起。"
+		}
+	},
+	kami: {
+		hp: 5,
+		r: 12,
+		scrap: 1,
+		score: 150,
+		bullet: 0,
+		contact: 3,
+		boss: false,
+		name: {
+			en: "Kamikaze",
+			zh: "神风无人机"
+		},
+		path: {
+			en: "Pauses, then dives on your position.",
+			zh: "先下沉，再朝你当时的位置加速撞。"
+		}
+	},
+	heli: {
+		hp: 22,
+		r: 20,
+		scrap: 2,
+		score: 300,
+		bullet: 1,
+		contact: 2,
+		boss: false,
+		name: {
+			en: "Gunship heli",
+			zh: "武装直升机"
+		},
+		path: {
+			en: "Flies to a hover band, drifts, then leaves.",
+			zh: "降到悬停高度，左右漂，时间到了再离开。"
+		}
+	},
+	tank: {
+		hp: 28,
+		r: 20,
+		scrap: 2,
+		score: 400,
+		bullet: 1.5,
+		contact: 0,
+		boss: false,
+		name: {
+			en: "Tank",
+			zh: "坦克"
+		},
+		path: {
+			en: "Ground crawl, then plants and shoots.",
+			zh: "贴地斜向爬，到点停住开炮。"
+		}
+	},
+	turret: {
+		hp: 34,
+		r: 18,
+		scrap: 2,
+		score: 400,
+		bullet: 1.5,
+		contact: 0,
+		boss: false,
+		name: {
+			en: "Turret",
+			zh: "炮塔"
+		},
+		path: {
+			en: "Slow ground drop, turret tracks you.",
+			zh: "缓慢落地，炮口一直跟着你转。"
+		}
+	},
+	gunship: {
+		hp: 80,
+		r: 34,
+		scrap: 5,
+		score: 1200,
+		bullet: 1.5,
+		contact: 3,
+		boss: false,
+		name: {
+			en: "Gunship",
+			zh: "重型武装机"
+		},
+		path: {
+			en: "Hovers longer than a heli and fans shots.",
+			zh: "比直升机悬得更久，扇形齐射。"
+		}
+	},
+	bomber: {
+		hp: 260,
+		r: 60,
+		scrap: 14,
+		score: 5e3,
+		bullet: 2,
+		contact: 4,
+		boss: false,
+		name: {
+			en: "Heavy bomber",
+			zh: "重轰炸机"
+		},
+		path: {
+			en: "Slow straight run with a wide sine.",
+			zh: "慢速直线，带很宽的正弦横移。"
+		}
+	},
+	carrier: {
+		hp: 20,
+		r: 20,
+		scrap: 3,
+		score: 1e3,
+		bullet: 0,
+		contact: 0,
+		boss: false,
+		name: {
+			en: "Item carrier",
+			zh: "运输机"
+		},
+		path: {
+			en: "Crosses the screen once, wrapping a single time.",
+			zh: "横穿屏幕，只折返一次。"
+		}
+	},
+	destroyer: {
+		hp: 320,
+		r: 50,
+		scrap: 12,
+		score: 4e3,
+		bullet: 1.5,
+		contact: 0,
+		boss: false,
+		name: {
+			en: "Destroyer",
+			zh: "驱逐舰"
+		},
+		path: {
+			en: "Ground ship. Slow, stops to broadside.",
+			zh: "地面舰，慢，停下来侧舷齐射。"
+		}
+	},
+	crystal: {
+		hp: 16,
+		r: 18,
+		scrap: 2,
+		score: 350,
+		bullet: 1.2,
+		contact: 2,
+		boss: false,
+		name: {
+			en: "Crystal fighter",
+			zh: "水晶战机"
+		},
+		path: {
+			en: "Late zones only. Line or spinning column.",
+			zh: "只在后段空域。横队或旋转纵队。"
+		}
+	},
+	boss_spider: {
+		hp: 1062,
+		r: 95,
+		scrap: 60,
+		score: 5e4,
+		bullet: 1,
+		contact: 5,
+		boss: true,
+		name: {
+			en: "Siege walker",
+			zh: "攻城步行机"
+		},
+		path: {
+			en: "Wave 5. Walks in, then paces.",
+			zh: "第 5 波。走进画面后左右踱步。"
+		}
+	},
+	boss_fortress: {
+		hp: 5600,
+		r: 110,
+		scrap: 80,
+		score: 8e4,
+		bullet: 1,
+		contact: 5,
+		boss: true,
+		name: {
+			en: "Sky fortress",
+			zh: "天空要塞"
+		},
+		path: {
+			en: "Wave 10. Holds a high line.",
+			zh: "第 10 波。停在高处。"
+		}
+	},
+	boss_battleship: {
+		hp: 15250,
+		r: 80,
+		scrap: 100,
+		score: 12e4,
+		bullet: 1,
+		contact: 5,
+		boss: true,
+		name: {
+			en: "Dreadnought",
+			zh: "无畏舰"
+		},
+		path: {
+			en: "Wave 15. Low, wide broadside.",
+			zh: "第 15 波。压低，宽侧舷。"
+		}
+	},
+	boss_mothership: {
+		hp: 45500,
+		r: 110,
+		scrap: 150,
+		score: 25e4,
+		bullet: 1,
+		contact: 6,
+		boss: true,
+		name: {
+			en: "Mothership",
+			zh: "母舰"
+		},
+		path: {
+			en: "Wave 20. Slow drift, three phases.",
+			zh: "第 20 波。慢漂，血量三阶段。"
+		}
+	}
+};
+var DANGER_HP = [
+	1,
+	1,
+	1.05,
+	1.12,
+	1.26,
+	1.4
+];
+var FOE_ORDER = [
+	"fighter",
+	"kami",
+	"heli",
+	"tank",
+	"turret",
+	"gunship",
+	"bomber",
+	"carrier",
+	"destroyer",
+	"crystal"
+];
+var BOSS_ORDER = [
+	"boss_spider",
+	"boss_fortress",
+	"boss_battleship",
+	"boss_mothership"
+];
+/** Original non-boss multiplier, before the extra ×1.3 applied at spawn. */
+function rawScale(wave, boss, danger = 0) {
+	const dhp = DANGER_HP[Math.max(0, Math.min(5, danger))] ?? 1;
+	const r = Math.max(0, wave - 1);
+	if (boss) return (1 + r * .3) * dhp;
+	const late = Math.max(0, r - 12);
+	const xn = 1 + .05 * Math.min(4, Math.max(0, wave - 6));
+	return (1 + r * r * .062 + late * late * late * .05) * xn * dhp;
+}
+/** Original client HP at this wave (elite ×2.5, non-boss also ×1.3). */
+function referenceHp(kind, wave, danger = 0, elite = false) {
+	const foe = FOES[kind];
+	if (!foe) return 0;
+	const mul = rawScale(wave, foe.boss, danger) * (foe.boss ? 1 : 1.3) * (elite ? 2.5 : 1);
+	return Math.round(foe.hp * mul);
+}
+/**
+* Same ratios as the reference table, with the late-wave square/cube
+* compressed so a sortie can still end. Bosses keep order, not the raw 40× gap.
+*/
+function playedHp(kind, wave, danger = 0, elite = false) {
+	const foe = FOES[kind];
+	if (!foe) return 12;
+	const dhp = DANGER_HP[Math.max(0, Math.min(5, danger))] ?? 1;
+	if (foe.boss) {
+		const grown = 1 + Math.max(0, wave - 1) * .045;
+		const ratio = Math.pow(foe.hp / 1062, .45);
+		return Math.max(80, Math.round(520 * ratio * grown * dhp));
+	}
+	const compressed = 1 + (rawScale(wave, false, danger) - 1) * .22;
+	return Math.max(6, Math.round(foe.hp * 1.3 * compressed * 1.28 * (elite ? 2.5 : 1)));
+}
+var ZONE_FORMS = [
+	[
+		{
+			id: "vee",
+			w: 4,
+			min: 1
+		},
+		{
+			id: "swoopL",
+			w: 3,
+			min: 1
+		},
+		{
+			id: "swoopR",
+			w: 3,
+			min: 1
+		},
+		{
+			id: "arcL",
+			w: 2,
+			min: 2
+		},
+		{
+			id: "arcR",
+			w: 2,
+			min: 2
+		},
+		{
+			id: "column",
+			w: 2,
+			min: 1
+		},
+		{
+			id: "heli",
+			w: 3,
+			min: 1
+		},
+		{
+			id: "tanks",
+			w: 3,
+			min: 1
+		},
+		{
+			id: "turrets",
+			w: 2,
+			min: 2
+		},
+		{
+			id: "gunship",
+			w: 1.5,
+			min: 3
+		},
+		{
+			id: "kami",
+			w: 1,
+			min: 3
+		}
+	],
+	[
+		{
+			id: "vee",
+			w: 3,
+			min: 1
+		},
+		{
+			id: "swoopL",
+			w: 2,
+			min: 1
+		},
+		{
+			id: "swoopR",
+			w: 2,
+			min: 1
+		},
+		{
+			id: "arcL",
+			w: 2,
+			min: 1
+		},
+		{
+			id: "arcR",
+			w: 2,
+			min: 1
+		},
+		{
+			id: "heli",
+			w: 3,
+			min: 1
+		},
+		{
+			id: "tanks",
+			w: 5,
+			min: 1
+		},
+		{
+			id: "turrets",
+			w: 3,
+			min: 1
+		},
+		{
+			id: "gunship",
+			w: 2,
+			min: 1
+		},
+		{
+			id: "bomber",
+			w: .6,
+			min: 6
+		},
+		{
+			id: "kami",
+			w: 1.5,
+			min: 1
+		}
+	],
+	[
+		{
+			id: "vee",
+			w: 3,
+			min: 1
+		},
+		{
+			id: "column",
+			w: 2,
+			min: 1
+		},
+		{
+			id: "arcL",
+			w: 2,
+			min: 1
+		},
+		{
+			id: "arcR",
+			w: 2,
+			min: 1
+		},
+		{
+			id: "heli",
+			w: 4,
+			min: 1
+		},
+		{
+			id: "turrets",
+			w: 4,
+			min: 1
+		},
+		{
+			id: "tanks",
+			w: 2,
+			min: 1
+		},
+		{
+			id: "gunship",
+			w: 3,
+			min: 1
+		},
+		{
+			id: "bomber",
+			w: 1,
+			min: 1
+		},
+		{
+			id: "kami",
+			w: 2.5,
+			min: 1
+		}
+	],
+	[
+		{
+			id: "vee",
+			w: 3,
+			min: 1
+		},
+		{
+			id: "swoopL",
+			w: 2,
+			min: 1
+		},
+		{
+			id: "swoopR",
+			w: 2,
+			min: 1
+		},
+		{
+			id: "column",
+			w: 2,
+			min: 1
+		},
+		{
+			id: "heli",
+			w: 3,
+			min: 1
+		},
+		{
+			id: "gunship",
+			w: 3,
+			min: 1
+		},
+		{
+			id: "destroyer",
+			w: 1.5,
+			min: 1
+		},
+		{
+			id: "bomber",
+			w: 1,
+			min: 1
+		},
+		{
+			id: "kami",
+			w: 2,
+			min: 1
+		}
+	],
+	[
+		{
+			id: "crystalSpiral",
+			w: 4,
+			min: 1
+		},
+		{
+			id: "crystalLine",
+			w: 4,
+			min: 1
+		},
+		{
+			id: "vee",
+			w: 2,
+			min: 1
+		},
+		{
+			id: "kami",
+			w: 3,
+			min: 1
+		},
+		{
+			id: "gunship",
+			w: 3,
+			min: 1
+		},
+		{
+			id: "bomber",
+			w: 1.2,
+			min: 1
+		},
+		{
+			id: "arcL",
+			w: 1.5,
+			min: 1
+		},
+		{
+			id: "arcR",
+			w: 1.5,
+			min: 1
+		}
+	]
+];
+var ZONE_LABEL = [
+	{
+		en: "Waves 1–4 · coast",
+		zh: "第 1–4 波 · 海岸"
+	},
+	{
+		en: "Waves 5–8 · desert",
+		zh: "第 5–8 波 · 荒漠"
+	},
+	{
+		en: "Waves 9–12 · city",
+		zh: "第 9–12 波 · 城市"
+	},
+	{
+		en: "Waves 13–16 · ocean",
+		zh: "第 13–16 波 · 海面"
+	},
+	{
+		en: "Waves 17+ · black sky",
+		zh: "第 17 波以后 · 黑空"
+	}
+];
+var FORM_NOTES = {
+	vee: {
+		en: "5 fighters, shallow vee, straight down.",
+		zh: "5 架战斗机，浅人字，直线向下。"
+	},
+	swoopL: {
+		en: "5 fighters from the left. Dive, then pull across and up.",
+		zh: "左侧 5 架。下冲后向右拉起。"
+	},
+	swoopR: {
+		en: "5 fighters from the right. Dive, then pull across and up.",
+		zh: "右侧 5 架。下冲后向左拉起。"
+	},
+	arcL: {
+		en: "6 fighters enter from the left edge on a side arc.",
+		zh: "6 架从左缘切入，走侧弧。"
+	},
+	arcR: {
+		en: "6 fighters enter from the right edge on a side arc.",
+		zh: "6 架从右缘切入，走侧弧。"
+	},
+	column: {
+		en: "6 fighters in a column, weaving.",
+		zh: "6 架纵队，边下边摆。"
+	},
+	heli: {
+		en: "1 heli, 2 from wave 6. Hover, then leave.",
+		zh: "1 架直升机，第 6 波起 2 架。悬停后离开。"
+	},
+	tanks: {
+		en: "2–3 tanks, ground crawl, then stop.",
+		zh: "2–3 辆坦克，贴地爬行后停炮。"
+	},
+	turrets: {
+		en: "2–3 turrets, slow ground drop.",
+		zh: "2–3 座炮塔，缓慢落地。"
+	},
+	gunship: {
+		en: "1 gunship. From danger 2 it can spawn elite.",
+		zh: "1 架重型武装机。危险 2 起有几率精英。"
+	},
+	bomber: {
+		en: "1 heavy bomber, from wave 6. Elite possible.",
+		zh: "1 架重轰炸机，第 6 波起。可精英。"
+	},
+	kami: {
+		en: "3–5 kamikaze drones. They commit to a dive.",
+		zh: "3–5 架神风。锁定你的位置后加速。"
+	},
+	destroyer: {
+		en: "1 destroyer, waves 13–16. Elite possible.",
+		zh: "1 艘驱逐舰，第 13–16 波。可精英。"
+	},
+	crystalSpiral: {
+		en: "4 crystal fighters in a spinning column.",
+		zh: "4 架水晶战机，旋转纵队。"
+	},
+	crystalLine: {
+		en: "4 crystal fighters hover in a line.",
+		zh: "4 架水晶战机，横队悬停。"
+	},
+	carrier: {
+		en: "Crosses during the wave. Drops a part, not a bullet.",
+		zh: "波次中横穿。掉配件，不射击。"
+	}
+};
+function zoneIndex(wave) {
+	return Math.min(4, Math.max(0, Math.floor((wave - 1) / 4)));
+}
+/**
+* Shop tier weights for tiers 0–3.
+* Luck does not invent a high tier. It multiplies the weight the wave already grew.
+* Wave 1 is entirely tier 0, at any luck.
+*/
+function luckWeights(wave, luck) {
+	const n = luck / 100;
+	const band = (offset, rate, cap) => {
+		const raw = Math.max(0, wave - 1 - offset) * rate;
+		const scaled = n >= 0 ? raw * (1 + n) : raw / (1 + Math.abs(n));
+		return Math.min(scaled, cap);
+	};
+	const t3 = band(6, .0023, .08);
+	const t2 = Math.max(t3, band(2, .02, .25));
+	const t1 = Math.max(t2, band(0, .06, .6));
+	return [
+		1 - t1,
+		t1 - t2,
+		t2 - t3,
+		t3
+	];
+}
+function dropMul(luck) {
+	return Math.max(0, 1 + luck / 100);
+}
+var LUCK_SAMPLES = [
+	1,
+	5,
+	10,
+	15,
+	20
+];
+var TIER_NAME = [
+	{
+		en: "Common",
+		zh: "普通"
+	},
+	{
+		en: "Fine",
+		zh: "精良"
+	},
+	{
+		en: "Rare",
+		zh: "稀有"
+	},
+	{
+		en: "Ace",
+		zh: "王牌"
+	}
+];
+//#endregion
+export { weaponById as C, shipById as S, dropMul as _, FOE_ORDER as a, playedHp as b, ITEMS as c, STARTER_WEAPONS as d, TIER_NAME as f, ZONE_LABEL as g, ZONE_FORMS as h, FOES as i, LUCK_SAMPLES as l, WEAPONS as m, BOSS_ORDER as n, FORM_NOTES as o, UPGRADES as p, CLASS_NOTES as r, GUNS as s, BOSSES as t, SHIPS as u, itemById as v, zoneIndex as w, referenceHp as x, luckWeights as y };
